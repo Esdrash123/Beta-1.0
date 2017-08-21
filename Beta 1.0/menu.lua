@@ -41,6 +41,8 @@ function scene:create( event )
     local bSobreJogo = display.newText( sceneGroup, "Sobre Jogo", display.contentCenterX, 350, native.systemFont, 20 )
     bSobreJogo:setFillColor( 1, 0.3, 0.2 )
 
+    bSobreJogo:addEventListener( "tap", gotoSobreJogo )
+
 end
 
 

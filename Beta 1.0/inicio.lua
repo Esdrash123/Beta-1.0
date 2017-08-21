@@ -2,8 +2,16 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
-local function gotoBackInicio(  )
-	composer.gotoScene( "inicio", { time=800, effect="crossFade" } )
+local function gotoEntrar(  )
+	composer.gotoScene( "entrar", {time=800, effect="crossFade"} )
+end
+
+local function gotoRegistrar(  )
+	composer.gotoScene( "registrar", { time==800, effect="crossFade" } )
+end
+
+local function gotoSobreJogo( )
+	composer.gotoScene( "sobreJogo", { time==800, effect="crossFade" } )
 end
 
 -- -----------------------------------------------------------------------------------
@@ -20,19 +28,20 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local texto1 = display.newText( sceneGroup, "Aqui vamos colocar", display.contentCenterX, 170, native.systemFont, 20 )
-	texto1:setFillColor( 0.2, 0.8, 0.5 )
-	local texto2 = display.newText( sceneGroup, "Tudo sobre o Aritmus e", display.contentCenterX, 200, native.systemFont, 20 )
-	texto2:setFillColor( 0.2, 0.8, 0.5 )
-	local texto3 = display.newText( sceneGroup, "Sobre nos desenvolvedores", display.contentCenterX, 230, native.systemFont, 20 )
-	texto3:setFillColor( 0.2, 0.8, 0.5 )
-	local texto4 = display.newText( sceneGroup, "E envolvidos... ", display.contentCenterX, 260, native.systemFont, 20 )
-	texto4:setFillColor( 0.2, 0.8, 0.5 )
+	local bEntrar = display.newText( sceneGroup, "entrar", display.contentCenterX, 250, native.systemFont, 20 )
+	bEntrar:setFillColor( 0, 0.2, 0.6 )
 
-	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX, display.contentCenterY + 200, native.systemFont, 20 )
-	bVoltar:setFillColor( 0.8, 0.6, 0.5 )
+	bEntrar:addEventListener( "tap", gotoEntrar )
 
-	bVoltar:addEventListener( "tap", gotoBackInicio )
+    local bRegistrar = display.newText( sceneGroup, "Registrar", display.contentCenterX, 300, native.systemFont, 20 )
+    bRegistrar:setFillColor( 0.5, 0, 1 )
+
+    bRegistrar:addEventListener( "tap", gotoRegistrar )
+
+    local bSobreJogo = display.newText( sceneGroup, "Sobre Jogo", display.contentCenterX, 350, native.systemFont, 20 )
+    bSobreJogo:setFillColor( 1, 0.3, 0.2 )
+
+    bSobreJogo:addEventListener( "tap", gotoSobreJogo )
 
 end
 

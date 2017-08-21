@@ -6,12 +6,8 @@ local function gotoApreBlocos(  )
 	composer.gotoScene( "apresentaBlocos", { time=800, effect="crossFade" } )
 end
 
-local function gotoRegistrar(  )
-	composer.gotoScene( "registrar", { time==800, effect="crossFade" } )
-end
-
-local function gotoSobreJogo( )
-	composer.gotoScene( "sobreJogo", { time==800, effect="crossFade" } )
+local function gotoInicio(  )
+	composer.gotoScene( "inicio", { time==800, effect="crossFade" } )
 end
 
 -- -----------------------------------------------------------------------------------
@@ -28,20 +24,28 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local bApreBlocos = display.newText( sceneGroup, "Blocos", display.contentCenterX, 250, native.systemFont, 20 ) 
-    bApreBlocos:setFillColor( 0, 0.2, 0.6 )
+	local bJogar = display.newText( sceneGroup, "Jogar", display.contentCenterX, 200, native.systemFont, 20 ) 
+    bJogar:setFillColor( 0.5, 0.5, 1 )
 
-    bApreBlocos:addEventListener( "tap", gotoApreBlocos )
+    bJogar:addEventListener( "tap", gotoApreBlocos )
 
-    local bRegistrar = display.newText( sceneGroup, "Registrar", display.contentCenterX, 300, native.systemFont, 20 )
-    bRegistrar:setFillColor( 0.5, 0, 1 )
+    local bNiveis = display.newText( sceneGroup, "Níves", display.contentCenterX, 250, native.systemFont, 20 )
+    bNiveis:setFillColor( 0, 0, 0 )
 
-    bRegistrar:addEventListener( "tap", gotoRegistrar )
+    local bTutorial = display.newText( sceneGroup, "Tutorial", display.contentCenterX, 300, native.systemFont, 20 )
+    bTutorial:setFillColor( 0.4, 0.4, 0.4 )
 
-    local bSobreJogo = display.newText( sceneGroup, "Sobre Jogo", display.contentCenterX, 350, native.systemFont, 20 )
-    bSobreJogo:setFillColor( 1, 0.3, 0.2 )
+    local bHistorico = display.newText( sceneGroup, "Historico", display.contentCenterX, 350, native.systemFont, 20 )
+    bHistorico:setFillColor( 1, 0.4, 0.9 )
 
-    bSobreJogo:addEventListener( "tap", gotoSobreJogo )
+    local bRanking = display.newText( sceneGroup, "Ranking", display.contentCenterX, 400, native.systemFont, 20 )
+    bRanking:setFillColor( 0, 0, 1 )
+
+    local bSair = display.newText( sceneGroup, "Sair", display.contentCenterX, display.contentCenterY + 240, native.systemFont, 20 )
+    bSair:setFillColor( 1, 0.9, 0.2 )
+
+    bSair:addEventListener( "tap", gotoInicio )
+
 
 end
 

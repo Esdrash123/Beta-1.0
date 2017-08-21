@@ -3,7 +3,11 @@ local composer = require( "composer" )
 local scene = composer.newScene()
 
 local function gotoBackInicio(  )
-	composer.gotoScene( "inicio", { time=800, effect="crossFade" } )
+	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
+end
+
+local function gotoMenuJogo ()
+	composer.gotoScene( "menuJogo", {time = 800, effect="crossFade"} )
 end
 
 -- -----------------------------------------------------------------------------------
@@ -20,19 +24,20 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local texto1 = display.newText( sceneGroup, "Aqui vamos colocar", display.contentCenterX, 170, native.systemFont, 20 )
-	texto1:setFillColor( 0.2, 0.8, 0.5 )
-	local texto2 = display.newText( sceneGroup, "Tudo sobre o Aritmus e", display.contentCenterX, 200, native.systemFont, 20 )
-	texto2:setFillColor( 0.2, 0.8, 0.5 )
-	local texto3 = display.newText( sceneGroup, "Sobre nos desenvolvedores", display.contentCenterX, 230, native.systemFont, 20 )
-	texto3:setFillColor( 0.2, 0.8, 0.5 )
-	local texto4 = display.newText( sceneGroup, "E envolvidos... ", display.contentCenterX, 260, native.systemFont, 20 )
-	texto4:setFillColor( 0.2, 0.8, 0.5 )
+	local nomeUsuario = display.newText( sceneGroup, "Nome de Usuario: ", display.contentCenterX -40, 230, native.systemFont, 17 )
+	nomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
+	local senha = display.newText( sceneGroup, "Senha: ", display.contentCenterX -77, 260, native.systemFont, 17 )
+	senha:setFillColor( 0, 1, 0.4 )
 
-	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX, display.contentCenterY + 200, native.systemFont, 20 )
-	bVoltar:setFillColor( 0.8, 0.6, 0.5 )
+	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bVoltar:setFillColor( 0.1, 1, 0.5 )
 
 	bVoltar:addEventListener( "tap", gotoBackInicio )
+
+	local bConfirma = display.newText( sceneGroup, "Confirma", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bConfirma:setFillColor( 1, 0, 0.3 )
+
+	bConfirma:addEventListener( "tap", gotoMenuJogo )
 
 end
 

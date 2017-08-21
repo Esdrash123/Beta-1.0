@@ -2,8 +2,8 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
-local function gotoBackMenu(  )
-	composer.gotoScene( "menu", {time = 800, effect="crossFade"} )
+local function gotoBackInicio(  )
+	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
 end
 
 local function gotoEntrar ()
@@ -36,10 +36,12 @@ function scene:create( event )
 	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
 	bVoltar:setFillColor( 0.5, 0.5, 0.5 )
 
-	bVoltar:addEventListener( "tap", gotoBackMenu )
+	bVoltar:addEventListener( "tap", gotoBackInicio )
 
-	local bEntar = display.newText( sceneGroup, "Entar", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
-	bEntar:setFillColor( 0.9, 0.4, 0.9 )
+	local bConfirma = display.newText( sceneGroup, "Confirmar", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bConfirma:setFillColor( 0.9, 0.4, 0.9 )
+
+	bConfirma:addEventListener( "tap", gotoEntrar )
 
 end
 

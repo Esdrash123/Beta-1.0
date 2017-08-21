@@ -67,10 +67,10 @@ function scene:hide( event )
 	local phase = event.phase
 
 	if ( phase == "will" ) then
-		-- Code here runs when the scene is on screen (but is about to go off screen)
+		-- O código aqui é executado quando a cena está na tela (mas está prestes a sair da tela)
 
 	elseif ( phase == "did" ) then
-		-- Code here runs immediately after the scene goes entirely off screen
+		-- O código aqui é executado imediatamente após a cena sair inteiramente da tela
 
 	end
 end
@@ -80,7 +80,7 @@ end
 function scene:destroy( event )
 
 	local sceneGroup = self.view
-	-- Code here runs prior to the removal of scene's view
+	-- O código aqui é executado antes da remoção da visão da cena
 
 end
 

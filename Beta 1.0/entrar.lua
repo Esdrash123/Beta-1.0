@@ -19,7 +19,11 @@ function scene:create( event )
 
 	local sceneGroup = self.view
 
-	local background = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 400, 1200 )
+	local fundo = display.newImageRect(sceneGroup, "FundoTela.png", display.actualContentWidth, display.actualContentHeight )
+	fundo.anchorX = 0
+	fundo.anchorY = 0
+	fundo.x = 0 + display.screenOriginX 
+	fundo.y = 0 + display.screenOriginY
 
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )

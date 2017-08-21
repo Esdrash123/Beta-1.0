@@ -1,0 +1,97 @@
+local composer = require( "composer" )
+
+local scene = composer.newScene()
+
+local function gotoApreBlocos(  )
+	composer.gotoScene( "apresentaBlocos", { time=800, effect="crossFade" } )
+end
+
+local function gotoRegistrar(  )
+	composer.gotoScene( "registrar", { time==800, effect="crossFade" } )
+end
+
+local function gotoSobreJogo( )
+	composer.gotoScene( "sobreJogo", { time==800, effect="crossFade" } )
+end
+
+-- -----------------------------------------------------------------------------------
+-- funções dos eventos da cena
+-- -----------------------------------------------------------------------------------
+
+-- criar()
+function scene:create( event )
+
+	local sceneGroup = self.view
+
+	local background = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 400, 1200 )
+
+	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
+	titulo:setFillColor( 0, 0, 0 )
+
+	local bApreBlocos = display.newText( sceneGroup, "Blocos", display.contentCenterX, 250, native.systemFont, 20 ) 
+    bApreBlocos:setFillColor( 0, 0.2, 0.6 )
+
+    bApreBlocos:addEventListener( "tap", gotoApreBlocos )
+
+    local bRegistrar = display.newText( sceneGroup, "Registrar", display.contentCenterX, 300, native.systemFont, 20 )
+    bRegistrar:setFillColor( 0.5, 0, 1 )
+
+    bRegistrar:addEventListener( "tap", gotoRegistrar )
+
+    local bSobreJogo = display.newText( sceneGroup, "Sobre Jogo", display.contentCenterX, 350, native.systemFont, 20 )
+    bSobreJogo:setFillColor( 1, 0.3, 0.2 )
+
+end
+
+
+-- mostrar()
+function scene:show( event )
+
+	local sceneGroup = self.view
+	local phase = event.phase
+
+	if ( phase == "will" ) then
+		-- O código aqui é executado quando a cena ainda está fora da tela (mas está prestes a aparecer na tela)
+
+	elseif ( phase == "did" ) then
+		-- O código aqui é executado quando a cena está inteiramente na tela
+
+	end
+end
+
+
+-- ocultar()
+function scene:hide( event )
+
+	local sceneGroup = self.view
+	local phase = event.phase
+
+	if ( phase == "will" ) then
+		-- Code here runs when the scene is on screen (but is about to go off screen)
+
+	elseif ( phase == "did" ) then
+		-- Code here runs immediately after the scene goes entirely off screen
+
+	end
+end
+
+
+-- destruir()
+function scene:destroy( event )
+
+	local sceneGroup = self.view
+	-- Code here runs prior to the removal of scene's view
+
+end
+
+
+-- -----------------------------------------------------------------------------------
+-- Função do evento das cenas ouvintes
+-- -----------------------------------------------------------------------------------
+scene:addEventListener( "create", scene )
+scene:addEventListener( "show", scene )
+scene:addEventListener( "hide", scene )
+scene:addEventListener( "destroy", scene )
+-- -----------------------------------------------------------------------------------
+
+return scene

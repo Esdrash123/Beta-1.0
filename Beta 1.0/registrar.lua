@@ -3,7 +3,11 @@ local composer = require( "composer" )
 local scene = composer.newScene()
 
 local function gotoBackMenu(  )
-	composer.gotoScene( "menu", { time=800, effect="crossFade" } )
+	composer.gotoScene( "menu", {time = 800, effect="crossFade"} )
+end
+
+local function gotoEntrar ()
+	composer.gotoScene( "entrar", {time = 800, effect="crossFade"} )
 end
 
 -- -----------------------------------------------------------------------------------
@@ -20,19 +24,22 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local texto1 = display.newText( sceneGroup, "Aqui vamos colocar", display.contentCenterX, 170, native.systemFont, 20 )
-	texto1:setFillColor( 0.2, 0.8, 0.5 )
-	local texto2 = display.newText( sceneGroup, "Tudo sobre o Aritmus e", display.contentCenterX, 200, native.systemFont, 20 )
-	texto2:setFillColor( 0.2, 0.8, 0.5 )
-	local texto3 = display.newText( sceneGroup, "Sobre nos desenvolvedores", display.contentCenterX, 230, native.systemFont, 20 )
-	texto3:setFillColor( 0.2, 0.8, 0.5 )
-	local texto4 = display.newText( sceneGroup, "E envolvidos... ", display.contentCenterX, 260, native.systemFont, 20 )
-	texto4:setFillColor( 0.2, 0.8, 0.5 )
+	local nomeUsuario = display.newText( sceneGroup, "Nome de Usuario: ", display.contentCenterX -40, 170, native.systemFont, 17 )
+	nomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
+	local apelido = display.newText( sceneGroup, "Apelido: ", display.contentCenterX -75, 200, native.systemFont, 17 )
+	apelido:setFillColor( 0.2, 0.8, 0.5 )
+	local senha = display.newText( sceneGroup, "Senha: ", display.contentCenterX -77, 230, native.systemFont, 17 )
+	senha:setFillColor( 0.2, 0.8, 0.5 )
+	local confSenha = display.newText( sceneGroup, "Confirma Senha: ", display.contentCenterX -40, 260, native.systemFont, 17 )
+	confSenha:setFillColor( 0.2, 0.8, 0.5 )
 
-	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX, display.contentCenterY + 200, native.systemFont, 20 )
-	bVoltar:setFillColor( 0.8, 0.6, 0.5 )
+	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bVoltar:setFillColor( 0.5, 0.5, 0.5 )
 
 	bVoltar:addEventListener( "tap", gotoBackMenu )
+
+	local bEntar = display.newText( sceneGroup, "Entar", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bEntar:setFillColor( 0.9, 0.4, 0.9 )
 
 end
 

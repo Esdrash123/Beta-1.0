@@ -2,17 +2,32 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
+local nomeUsuario
+local senha
+
 local function gotoBackInicio(  )
 	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
+
 end
 
 local function gotoMenuJogo ()
 	composer.gotoScene( "menuJogo", {time = 800, effect="crossFade"} )
+
+end
+
+--Função para a escrita 
+local function textListener( event )
+ 
+    if ( event.phase == "began" ) then
+	        event.target.text = event.target.text -- Deixa o campo com o ultimo texto colocado pelo usuario
+	
+	end
 end
 
 -- -----------------------------------------------------------------------------------
 -- funções dos eventos da cena
 -- -----------------------------------------------------------------------------------
+
 
 -- criar()
 function scene:create( event )
@@ -27,11 +42,21 @@ function scene:create( event )
 
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
+	
+	local titulo = display.newText( sceneGroup, "Email :", display.contentCenterX-60, 170, native.systemFont, 20 )
+	titulo:setFillColor( 0, 0, 0 )
 
-	local nomeUsuario = display.newText( sceneGroup, "Nome de Usuario: ", display.contentCenterX -40, 230, native.systemFont, 17 )
-	nomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
-	local senha = display.newText( sceneGroup, "Senha: ", display.contentCenterX -77, 260, native.systemFont, 17 )
-	senha:setFillColor( 0, 1, 0.4 )
+	local titulo = display.newText( sceneGroup, "Senha :", display.contentCenterX-55, 240, native.systemFont, 20 )
+	titulo:setFillColor( 0, 0, 0 )
+
+    nomeUsuario = native.newTextField( display.contentCenterX, 200, 180, 30 ) 
+    nomeUsuario:addEventListener( "userInput", textListener )
+	nomeUsuario.size= nil	
+
+    senha = native.newTextField( display.contentCenterX, display.contentCenterY+30, 180, 30 )
+    senha:addEventListener( "userInput", textListener )
+	senha.size = nil
+
 
 	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
 	bVoltar:setFillColor( 0.1, 1, 0.5 )
@@ -42,6 +67,8 @@ function scene:create( event )
 	bConfirma:setFillColor( 1, 0, 0.3 )
 
 	bConfirma:addEventListener( "tap", gotoMenuJogo )
+
+
 
 end
 
@@ -59,6 +86,10 @@ function scene:show( event )
 		-- O código aqui é executado quando a cena está inteiramente na tela
 
 	end
+
+	nomeUsuario.isVisible = true	--Torna visivel o campo assim que o usuario trocar de pagina
+	senha.isVisible = true
+
 end
 
 
@@ -75,6 +106,10 @@ function scene:hide( event )
 		-- O código aqui é executado imediatamente após a cena sair inteiramente da tela
 
 	end
+
+	nomeUsuario.isVisible = false  --Torna invisivel o campo assim que o usuario trocar de pagina
+	senha.isVisible = false
+
 end
 
 
@@ -85,7 +120,6 @@ function scene:destroy( event )
 	-- O código aqui é executado antes da remoção da visão da cena
 
 end
-
 
 -- -----------------------------------------------------------------------------------
 -- Função do evento das cenas ouvintes

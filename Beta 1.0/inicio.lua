@@ -32,7 +32,7 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local bEntrar = display.newText( sceneGroup, "entrar", display.contentCenterX, 250, native.systemFont, 20 )
+	local bEntrar = display.newText( sceneGroup, "Entrar", display.contentCenterX, 250, native.systemFont, 20 )
 	bEntrar:setFillColor( 0, 0.2, 0.6 )
 
 	bEntrar:addEventListener( "tap", gotoEntrar )

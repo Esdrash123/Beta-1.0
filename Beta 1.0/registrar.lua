@@ -2,12 +2,26 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
+local nomeUsuario
+local apelido
+local senha
+local confSenha
+
 local function gotoBackInicio(  )
 	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
 end
 
 local function gotoEntrar ()
 	composer.gotoScene( "entrar", {time = 800, effect="crossFade"} )
+end
+
+--Função para a escrita 
+local function textListener( event )
+ 
+    if ( event.phase == "began" ) then
+	        event.target.text = event.target.text -- Deixa o campo com o ultimo texto colocado pelo usuario
+	
+	end
 end
 
 -- -----------------------------------------------------------------------------------
@@ -28,14 +42,34 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 
-	local nomeUsuario = display.newText( sceneGroup, "Nome de Usuario: ", display.contentCenterX -40, 170, native.systemFont, 17 )
-	nomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
-	local apelido = display.newText( sceneGroup, "Apelido: ", display.contentCenterX -75, 200, native.systemFont, 17 )
-	apelido:setFillColor( 0.2, 0.8, 0.5 )
-	local senha = display.newText( sceneGroup, "Senha: ", display.contentCenterX -77, 230, native.systemFont, 17 )
-	senha:setFillColor( 0.2, 0.8, 0.5 )
-	local confSenha = display.newText( sceneGroup, "Confirma Senha: ", display.contentCenterX -40, 260, native.systemFont, 17 )
-	confSenha:setFillColor( 0.2, 0.8, 0.5 )
+	local tNomeUsuario = display.newText( sceneGroup, "Nome de Usuario :", display.contentCenterX -40, 170, native.systemFont, 17 )
+	tNomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
+
+    nomeUsuario = native.newTextField( display.contentCenterX-20, 200, 180, 30 ) 
+    nomeUsuario:addEventListener( "userInput", textListener )
+	nomeUsuario.size= nil
+	
+	local tApelido = display.newText( sceneGroup, "Apelido :", display.contentCenterX -75, 230, native.systemFont, 17 )
+	tApelido:setFillColor( 0.2, 0.8, 0.5 )
+	
+    apelido = native.newTextField( display.contentCenterX-20, 260, 180, 30 ) 
+    apelido:addEventListener( "userInput", textListener )
+	apelido.size= nil
+
+	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX -77, 290, native.systemFont, 17 )
+	tSenha:setFillColor( 0.2, 0.8, 0.5 )
+
+    senha = native.newTextField( display.contentCenterX-20, 320, 180, 30 ) 
+    senha:addEventListener( "userInput", textListener )
+	senha.size= nil
+
+	local tConfSenha = display.newText( sceneGroup, "Confirma Senha :", display.contentCenterX -40, 350, native.systemFont, 17 )
+	tConfSenha:setFillColor( 0.2, 0.8, 0.5 )
+
+	confSenha = native.newTextField( display.contentCenterX-20, 380, 180, 30 ) 
+    confSenha:addEventListener( "userInput", textListener )
+	confSenha.size= nil
+		
 
 	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
 	bVoltar:setFillColor( 0.5, 0.5, 0.5 )
@@ -63,6 +97,11 @@ function scene:show( event )
 		-- O código aqui é executado quando a cena está inteiramente na tela
 
 	end
+
+	nomeUsuario.isVisible = true
+	apelido.isVisible = true 		--Torna visivel o campo assim que o usuario entrar na página
+	senha.isVisible = true
+	confSenha.isVisible = true
 end
 
 
@@ -79,6 +118,11 @@ function scene:hide( event )
 		-- O código aqui é executado imediatamente após a cena sair inteiramente da tela
 
 	end
+
+	nomeUsuario.isVisible = false
+	apelido.isVisible = false		--Torna invisivel o campo assim que o usuario trocar de página
+	senha.isVisible = false
+	confSenha.isVisible = false
 end
 
 

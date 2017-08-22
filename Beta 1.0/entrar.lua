@@ -43,11 +43,11 @@ function scene:create( event )
 	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
 	titulo:setFillColor( 0, 0, 0 )
 	
-	local titulo = display.newText( sceneGroup, "Email :", display.contentCenterX-60, 170, native.systemFont, 20 )
-	titulo:setFillColor( 0, 0, 0 )
+	local tEmail = display.newText( sceneGroup, "Email :", display.contentCenterX-60, 170, native.systemFont, 20 )
+	tEmail:setFillColor( 0, 0, 0 )
 
-	local titulo = display.newText( sceneGroup, "Senha :", display.contentCenterX-55, 240, native.systemFont, 20 )
-	titulo:setFillColor( 0, 0, 0 )
+	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX-55, 240, native.systemFont, 20 )
+	tSenha:setFillColor( 0, 0, 0 )
 
     nomeUsuario = native.newTextField( display.contentCenterX, 200, 180, 30 ) 
     nomeUsuario:addEventListener( "userInput", textListener )
@@ -87,7 +87,7 @@ function scene:show( event )
 
 	end
 
-	nomeUsuario.isVisible = true	--Torna visivel o campo assim que o usuario trocar de pagina
+	nomeUsuario.isVisible = true	--Torna visivel o campo assim que o usuario entrar na página
 	senha.isVisible = true
 
 end
@@ -107,7 +107,7 @@ function scene:hide( event )
 
 	end
 
-	nomeUsuario.isVisible = false  --Torna invisivel o campo assim que o usuario trocar de pagina
+	nomeUsuario.isVisible = false  --Torna invisivel o campo assim que o usuario trocar de página
 	senha.isVisible = false
 
 end

@@ -8,11 +8,11 @@ local senha
 local confSenha
 
 local function gotoBackInicio(  )
-	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
+	composer.gotoScene( "inicio", {time = 200, effect="crossFade"} )
 end
 
 local function gotoEntrar ()
-	composer.gotoScene( "entrar", {time = 800, effect="crossFade"} )
+	composer.gotoScene( "entrar", {time = 200, effect="crossFade"} )
 end
 
 --Função para a escrita 

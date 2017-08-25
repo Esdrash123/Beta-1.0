@@ -6,12 +6,12 @@ local nomeUsuario
 local senha
 
 local function gotoBackInicio(  )
-	composer.gotoScene( "inicio", {time = 800, effect="crossFade"} )
+	composer.gotoScene( "inicio", {time = 200, effect="crossFade"} )
 
 end
 
 local function gotoMenuJogo ()
-	composer.gotoScene( "menuJogo", {time = 800, effect="crossFade"} )
+	composer.gotoScene( "menuJogo", {time = 200, effect="crossFade"} )
 
 end
 

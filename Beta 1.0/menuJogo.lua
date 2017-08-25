@@ -5,15 +5,15 @@ local scene = composer.newScene()
 -- este metódo gotoApreBlocos() faz a trasição para apresentaBlocos.lua
 -- arquivo que criado para colocar oque tinha escrito antes na main.lua
 local function gotoApreBlocos(  )
-	composer.gotoScene( "apresentaBlocos", { time=800, effect="crossFade" } )
+	composer.gotoScene( "apresentaBlocos", { time=200, effect="crossFade" } )
 end
 
 local function gotoInicio(  )
-	composer.gotoScene( "inicio", { time=800, effect="crossFade" } )
+	composer.gotoScene( "inicio", { time=200, effect="crossFade" } )
 end
 
 local function gotoRanking( )
-	composer.gotoScene( "ranking", { time=800, effect="crossFade" } )
+	composer.gotoScene( "ranking", { time=200, effect="crossFade" } )
 end
 
 -- -----------------------------------------------------------------------------------

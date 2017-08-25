@@ -3,15 +3,15 @@ local composer = require( "composer" )
 local scene = composer.newScene()
 
 local function gotoEntrar(  )
-	composer.gotoScene( "entrar", {time=800, effect="crossFade"} )
+	composer.gotoScene( "entrar", {time=200, effect="crossFade"} )
 end
 
 local function gotoRegistrar(  )
-	composer.gotoScene( "registrar", { time==800, effect="crossFade" } )
+	composer.gotoScene( "registrar", { time==200, effect="crossFade" } )
 end
 
 local function gotoSobreJogo( )
-	composer.gotoScene( "sobreJogo", { time==800, effect="crossFade" } )
+	composer.gotoScene( "sobreJogo", { time==200, effect="crossFade" } )
 end
 
 -- -----------------------------------------------------------------------------------

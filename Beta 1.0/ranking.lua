@@ -27,14 +27,16 @@ function scene:create( event )
 	local titulo = display.newImageRect(sceneGroup, "NomeDoJogo.png", 300, 300 )
 	titulo.x = display.contentCenterX+10	
 	titulo.y = display.contentCenterY-150
-	-------------------------------------------------
+	--------------------------------------------------
+	
 	local jog1 = display.newText( sceneGroup, "ROC      2429", display.contentCenterX, display.contentCenterY - 80, native.systemFont, 30 )
 	jog1:setFillColor( 0, 0, 0 )
 	local jog2 = display.newText( sceneGroup, "WAR      2399", display.contentCenterX, display.contentCenterY - 40, native.systemFont, 30 )
 	jog2:setFillColor( 0, 0, 0 )
 	local jog3 = display.newText( sceneGroup, "EDH      1890", display.contentCenterX, display.contentCenterY , native.systemFont, 30 )
 	jog3:setFillColor( 0, 0, 0 )
-	-------------------------------------------------
+
+	--------------------------------------------------
     local bSair = display.newText( sceneGroup, "Sair", display.contentCenterX, display.contentCenterY + 240, native.systemFont, 20 )
     bSair:setFillColor( 0, 0, 0 )
 

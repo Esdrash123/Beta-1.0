@@ -2,7 +2,7 @@ local composer = require( "composer" )
 
 local scene = composer.newScene()
 
-local nomeUsuario
+local email
 local apelido
 local senha
 local confSenha
@@ -43,12 +43,12 @@ function scene:create( event )
 	titulo.x = display.contentCenterX+10	
 	titulo.y = display.contentCenterY-150
 
-	local tNomeUsuario = display.newText( sceneGroup, "Nome de Usuario :", display.contentCenterX -40, 170, native.systemFont, 17 )
-	tNomeUsuario:setFillColor( 0, 0, 0 )
+	local tEmail = display.newText( sceneGroup, "Email :", display.contentCenterX -85, 170, native.systemFont, 17 )
+	tEmail:setFillColor( 0, 0, 0 )
 
-    nomeUsuario = native.newTextField( display.contentCenterX-20, 200, 180, 30 ) 
-    nomeUsuario:addEventListener( "userInput", textListener )
-	nomeUsuario.size= nil
+    email = native.newTextField( display.contentCenterX-20, 200, 180, 30 ) 
+    email:addEventListener( "userInput", textListener )
+	email.size= nil
 	
 	local tApelido = display.newText( sceneGroup, "Apelido :", display.contentCenterX -75, 230, native.systemFont, 17 )
 	tApelido:setFillColor( 0, 0, 0 )
@@ -57,14 +57,14 @@ function scene:create( event )
     apelido:addEventListener( "userInput", textListener )
 	apelido.size= nil
 
-	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX -77, 290, native.systemFont, 17 )
+	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX -80, 290, native.systemFont, 17 )
 	tSenha:setFillColor( 0, 0, 0 )
 
     senha = native.newTextField( display.contentCenterX-20, 320, 180, 30 ) 
     senha:addEventListener( "userInput", textListener )
 	senha.size= nil
 
-	local tConfSenha = display.newText( sceneGroup, "Confirma Senha :", display.contentCenterX -40, 350, native.systemFont, 17 )
+	local tConfSenha = display.newText( sceneGroup, "Confirmar Senha :", display.contentCenterX -40, 350, native.systemFont, 17 )
 	tConfSenha:setFillColor( 0, 0, 0 )
 
 	confSenha = native.newTextField( display.contentCenterX-20, 380, 180, 30 ) 
@@ -99,7 +99,7 @@ function scene:show( event )
 
 	end
 
-	nomeUsuario.isVisible = true
+	email.isVisible = true
 	apelido.isVisible = true 		--Torna visivel o campo assim que o usuario entrar na página
 	senha.isVisible = true
 	confSenha.isVisible = true
@@ -120,7 +120,7 @@ function scene:hide( event )
 
 	end
 
-	nomeUsuario.isVisible = false
+	email.isVisible = false
 	apelido.isVisible = false		--Torna invisivel o campo assim que o usuario trocar de página
 	senha.isVisible = false
 	confSenha.isVisible = false

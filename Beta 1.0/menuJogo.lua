@@ -42,7 +42,7 @@ function scene:create( event )
     local bTutorial = display.newText( sceneGroup, "Tutorial", display.contentCenterX, 300, native.systemFont, 20 )
     bTutorial:setFillColor( 0, 0, 0 )
 
-    local bHistorico = display.newText( sceneGroup, "Historico", display.contentCenterX, 350, native.systemFont, 20 )
+    local bHistorico = display.newText( sceneGroup, "Histórico", display.contentCenterX, 350, native.systemFont, 20 )
     bHistorico:setFillColor( 0, 0, 0 )
 
     local bRanking = display.newText( sceneGroup, "Ranking", display.contentCenterX, 400, native.systemFont, 20 )

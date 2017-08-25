@@ -29,21 +29,22 @@ function scene:create( event )
 	fundo.x = 0 + display.screenOriginX 
 	fundo.y = 0 + display.screenOriginY
 
-	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
-	titulo:setFillColor( 0, 0, 0 )
+	local titulo = display.newImageRect(sceneGroup, "NomeDoJogo.png", 300, 300 )
+	titulo.x = display.contentCenterX+10	
+	titulo.y = display.contentCenterY-150
 
 	local bEntrar = display.newText( sceneGroup, "Entrar", display.contentCenterX, 250, native.systemFont, 20 )
-	bEntrar:setFillColor( 0, 0.2, 0.6 )
+	bEntrar:setFillColor( 0, 0, 0 )
 
 	bEntrar:addEventListener( "tap", gotoEntrar )
 
     local bRegistrar = display.newText( sceneGroup, "Registrar", display.contentCenterX, 300, native.systemFont, 20 )
-    bRegistrar:setFillColor( 0.5, 0, 1 )
+    bRegistrar:setFillColor( 0, 0, 0 )
 
     bRegistrar:addEventListener( "tap", gotoRegistrar )
 
     local bSobreJogo = display.newText( sceneGroup, "Sobre Jogo", display.contentCenterX, 350, native.systemFont, 20 )
-    bSobreJogo:setFillColor( 1, 0.3, 0.2 )
+    bSobreJogo:setFillColor( 0, 0, 0 )
 
     bSobreJogo:addEventListener( "tap", gotoSobreJogo )
 

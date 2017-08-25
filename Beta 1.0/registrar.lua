@@ -39,32 +39,33 @@ function scene:create( event )
 	fundo.x = 0 + display.screenOriginX 
 	fundo.y = 0 + display.screenOriginY
 	
-	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
-	titulo:setFillColor( 0, 0, 0 )
+	local titulo = display.newImageRect(sceneGroup, "NomeDoJogo.png", 300, 300 )
+	titulo.x = display.contentCenterX+10	
+	titulo.y = display.contentCenterY-150
 
 	local tNomeUsuario = display.newText( sceneGroup, "Nome de Usuario :", display.contentCenterX -40, 170, native.systemFont, 17 )
-	tNomeUsuario:setFillColor( 0.2, 0.8, 0.5 )
+	tNomeUsuario:setFillColor( 0, 0, 0 )
 
     nomeUsuario = native.newTextField( display.contentCenterX-20, 200, 180, 30 ) 
     nomeUsuario:addEventListener( "userInput", textListener )
 	nomeUsuario.size= nil
 	
 	local tApelido = display.newText( sceneGroup, "Apelido :", display.contentCenterX -75, 230, native.systemFont, 17 )
-	tApelido:setFillColor( 0.2, 0.8, 0.5 )
+	tApelido:setFillColor( 0, 0, 0 )
 	
     apelido = native.newTextField( display.contentCenterX-20, 260, 180, 30 ) 
     apelido:addEventListener( "userInput", textListener )
 	apelido.size= nil
 
 	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX -77, 290, native.systemFont, 17 )
-	tSenha:setFillColor( 0.2, 0.8, 0.5 )
+	tSenha:setFillColor( 0, 0, 0 )
 
     senha = native.newTextField( display.contentCenterX-20, 320, 180, 30 ) 
     senha:addEventListener( "userInput", textListener )
 	senha.size= nil
 
 	local tConfSenha = display.newText( sceneGroup, "Confirma Senha :", display.contentCenterX -40, 350, native.systemFont, 17 )
-	tConfSenha:setFillColor( 0.2, 0.8, 0.5 )
+	tConfSenha:setFillColor( 0, 0, 0 )
 
 	confSenha = native.newTextField( display.contentCenterX-20, 380, 180, 30 ) 
     confSenha:addEventListener( "userInput", textListener )
@@ -72,12 +73,12 @@ function scene:create( event )
 		
 
 	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
-	bVoltar:setFillColor( 0.5, 0.5, 0.5 )
+	bVoltar:setFillColor( 0, 0, 0 )
 
 	bVoltar:addEventListener( "tap", gotoBackInicio )
 
 	local bConfirma = display.newText( sceneGroup, "Confirmar", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
-	bConfirma:setFillColor( 0.9, 0.4, 0.9 )
+	bConfirma:setFillColor( 0, 0, 0 )
 
 	bConfirma:addEventListener( "tap", gotoEntrar )
 

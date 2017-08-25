@@ -40,8 +40,9 @@ function scene:create( event )
 	fundo.x = 0 + display.screenOriginX 
 	fundo.y = 0 + display.screenOriginY
 
-	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
-	titulo:setFillColor( 0, 0, 0 )
+	local titulo = display.newImageRect(sceneGroup, "NomeDoJogo.png", 300, 300 )
+	titulo.x = display.contentCenterX+10	
+	titulo.y = display.contentCenterY-150
 	
 	local tEmail = display.newText( sceneGroup, "Email :", display.contentCenterX-60, 170, native.systemFont, 20 )
 	tEmail:setFillColor( 0, 0, 0 )
@@ -59,12 +60,12 @@ function scene:create( event )
 
 
 	local bVoltar = display.newText( sceneGroup, "Voltar", display.contentCenterX - 50, display.contentCenterY + 240, native.systemFont, 20 )
-	bVoltar:setFillColor( 0.1, 1, 0.5 )
+	bVoltar:setFillColor( 0, 0, 0 )
 
 	bVoltar:addEventListener( "tap", gotoBackInicio )
 
-	local bConfirma = display.newText( sceneGroup, "Confirma", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
-	bConfirma:setFillColor( 1, 0, 0.3 )
+	local bConfirma = display.newText( sceneGroup, "Confirmar", display.contentCenterX + 50, display.contentCenterY + 240, native.systemFont, 20 )
+	bConfirma:setFillColor( 0, 0, 0 )
 
 	bConfirma:addEventListener( "tap", gotoMenuJogo )
 

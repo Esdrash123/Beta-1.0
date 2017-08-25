@@ -27,11 +27,12 @@ function scene:create( event )
 	fundo.x = 0 + display.screenOriginX 
 	fundo.y = 0 + display.screenOriginY
 
-	local titulo = display.newText( sceneGroup, "Aritmus", display.contentCenterX, 70, native.systemFont, 50 )
-	titulo:setFillColor( 0, 0, 0 )
+	local titulo = display.newImageRect(sceneGroup, "NomeDoJogo.png", 300, 300 )
+	titulo.x = display.contentCenterX+10	
+	titulo.y = display.contentCenterY-150
 
 	local bJogar = display.newText( sceneGroup, "Jogar", display.contentCenterX, 200, native.systemFont, 20 ) 
-    bJogar:setFillColor( 0.5, 0.5, 1 )
+    bJogar:setFillColor( 0, 0, 0 )
 
     bJogar:addEventListener( "tap", gotoApreBlocos )
 
@@ -39,16 +40,16 @@ function scene:create( event )
     bNiveis:setFillColor( 0, 0, 0 )
 
     local bTutorial = display.newText( sceneGroup, "Tutorial", display.contentCenterX, 300, native.systemFont, 20 )
-    bTutorial:setFillColor( 0.4, 0.4, 0.4 )
+    bTutorial:setFillColor( 0, 0, 0 )
 
     local bHistorico = display.newText( sceneGroup, "Historico", display.contentCenterX, 350, native.systemFont, 20 )
-    bHistorico:setFillColor( 1, 0.4, 0.9 )
+    bHistorico:setFillColor( 0, 0, 0 )
 
     local bRanking = display.newText( sceneGroup, "Ranking", display.contentCenterX, 400, native.systemFont, 20 )
-    bRanking:setFillColor( 0, 0, 1 )
+    bRanking:setFillColor( 0, 0, 0 )
 
     local bSair = display.newText( sceneGroup, "Sair", display.contentCenterX, display.contentCenterY + 240, native.systemFont, 20 )
-    bSair:setFillColor( 1, 0.9, 0.2 )
+    bSair:setFillColor( 0, 0, 0 )
 
     bSair:addEventListener( "tap", gotoInicio )
 

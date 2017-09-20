@@ -1,7 +1,3 @@
-local composer = require( "composer" )
+local oi = require("Bloco")
 
-display.setStatusBar( display.HiddenStatusBar )
-
-math.randomseed( os.time() )
-
-composer.gotoScene( "inicio" )
+oi.criarBloco()

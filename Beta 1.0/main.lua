@@ -1,3 +1,3 @@
-local oi = require("Bloco")
+local tabela = require("TabelaBlocos")
 
-oi.criarBloco()
+tabela.posicionarBlocos()

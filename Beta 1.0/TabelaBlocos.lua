@@ -5,7 +5,7 @@ local bloco= require("Bloco")
 local base = display.newImage("base.png")
  base.x = display.contentCenterX
  base.y = display.contentCenterY + alturaDaBase * 0.5
-   fisica.addBody(base,"static")
+   fisica.addBody(base,"static",{friction = 0.3})
 
 TabelaBlocos = {
     numeroColunas = 3,
@@ -16,9 +16,8 @@ function TabelaBlocos:posicionarBlocos()
  local blocoPosicionado
   for linha = 1, TabelaBlocos.numeroLinhas do  
     blocoPosicionado = bloco.criarBloco()
-  return blocoPosicionado
+
   end
  end 
-
-
-
+return TabelaBlocos
+ 

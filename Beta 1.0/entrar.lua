@@ -47,6 +47,7 @@ function scene:create( event )
 	local tEmail = display.newText( sceneGroup, "Email :", display.contentCenterX-60, 170, native.systemFont, 20 )
 	tEmail:setFillColor( 0, 0, 0 )
 
+
 	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX-55, 240, native.systemFont, 20 )
 	tSenha:setFillColor( 0, 0, 0 )
 
@@ -56,6 +57,7 @@ function scene:create( event )
 
     senha = native.newTextField( display.contentCenterX, display.contentCenterY+30, 180, 30 )
     senha:addEventListener( "userInput", textListener )
+	senha.isSecure = true
 	senha.size = nil
 
 

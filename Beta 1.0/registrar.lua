@@ -60,15 +60,19 @@ function scene:create( event )
 	local tSenha = display.newText( sceneGroup, "Senha :", display.contentCenterX -80, 290, native.systemFont, 17 )
 	tSenha:setFillColor( 0, 0, 0 )
 
+
     senha = native.newTextField( display.contentCenterX-20, 320, 180, 30 ) 
     senha:addEventListener( "userInput", textListener )
+	senha.isSecure = true
 	senha.size= nil
+
 
 	local tConfSenha = display.newText( sceneGroup, "Confirmar Senha :", display.contentCenterX -40, 350, native.systemFont, 17 )
 	tConfSenha:setFillColor( 0, 0, 0 )
 
 	confSenha = native.newTextField( display.contentCenterX-20, 380, 180, 30 ) 
     confSenha:addEventListener( "userInput", textListener )
+	confSenha.isSecure = true
 	confSenha.size= nil
 		
 

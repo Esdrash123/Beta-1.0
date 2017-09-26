@@ -1,2 +1,7 @@
-local tabela = require("TabelaBlocos")
-tabela.posicionarBlocos()
+local composer = require( "composer" )
+
+display.setStatusBar( display.HiddenStatusBar )
+
+math.randomseed( os.time() )
+
+composer.gotoScene( "inicio" )
